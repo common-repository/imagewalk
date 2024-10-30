@@ -1,0 +1,25 @@
+.imgw-spinner {
+	display: block;
+	padding: 20px 0;
+
+	&:after {
+		animation: imgw-spinner 1.2s linear infinite;
+		border: 5px solid rgba(0, 0, 0, .2);
+		border-color: rgba(0, 0, 0, .2) transparent rgba(0, 0, 0, .2) transparent;
+		border-radius: 50%;
+		content: " ";
+		display: block;
+		height: 46px;
+		margin: 0 auto;
+		width: 46px;
+	}
+}
+
+@keyframes imgw-spinner {
+	0% {
+		transform: rotate( 0deg );
+	}
+	100% {
+		transform: rotate( 360deg );
+	}
+}

@@ -1,0 +1,57 @@
+/**
+ * Menubar container.
+ */
+.imgw-menubar {
+	background: $background-color;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 2em 0;
+	padding: .65em 1em;
+	max-width: 100%;
+	min-width: $min-width;
+	width: $max-width;
+
+	a {
+		display: inline-block;
+
+		&, &:hover, &:visited {
+			border: 0 none;
+			color: inherit;
+			font-weight: bold;
+			text-decoration: none !important;
+		}
+	}
+
+	&__left {
+		a {
+			display: block;
+			float: left;
+			height: 1.8em;
+			margin-right: 5px;
+		}
+
+		&:after {
+			clear: both;
+			content: "";
+			display: table;
+		}
+
+		.imgw-icon {
+			font-size: 1.8em;
+			line-height: 1em;
+		}
+
+		.imgw-uploader--icon {
+			font-size: 1.65em;
+			line-height: 1em;
+		}
+	}
+
+	&__right {
+		a {
+			line-height: 1.8em;
+		}
+	}
+
+}

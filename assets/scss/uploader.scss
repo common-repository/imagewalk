@@ -1,0 +1,138 @@
+@import 'variables';
+
+/**
+ * Uploader container.
+ */
+.imgw-uploader {
+	background-color: rgb(0, 0, 0);
+	display: none;
+	height: 100%;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100000; // One index higher than #wpadminbar.
+
+	&__step {
+		margin: 70px auto 0;
+		max-width: 100%;
+		min-width: $min-width;
+		width: $max-width;
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 $gutter-width .65em;
+
+		&__navleft,
+		&__navright {
+			position: relative;
+		}
+
+		// Remove gutter on wide screen.
+		@media screen and (min-width: $max-width + $gutter-width) {
+			margin: 0 0 .65em;
+		}
+	}
+
+	&__square {
+		height: 0;
+		padding-top: 100%;
+		position: relative;
+		width: 100%;
+	}
+
+	&__image {
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		img,
+		canvas {
+			width: 100%;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: center;
+		margin: .65em $gutter-width 0;
+		text-align: center;
+
+		.imgw-btn {
+			margin: 0 .65em;
+		}
+
+		// Remove gutter on wide screen.
+		@media screen and (min-width: $max-width + $gutter-width) {
+			margin: .65em 0 0;
+		}
+	}
+
+	&__form {
+		margin: .65em $gutter-width 0;
+
+		label {
+			color: white;
+			display: block;
+			font-size: .9em;
+			font-weight: bold;
+			padding-bottom: 3px;
+		}
+
+		input {
+			border: 0 none !important;
+			font-size: 1em;
+			line-height: 1em;
+			padding: .8em !important;
+			width: 100%;
+		}
+
+		// Remove gutter on wide screen.
+		@media screen and (min-width: $max-width + $gutter-width) {
+			margin: .65em 0 0;
+		}
+	}
+
+	&__file-mask {
+		height: 1px !important;
+		width: 1px !important;
+		opacity: 0 !important;
+		overflow: auto !important;
+	}
+
+	&__close {
+		display: block;
+		font-size: 1.2em;
+		line-height: 1.2em;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		right: $gutter-width;
+		top: $gutter-width;
+	}
+
+	&--icon {
+		background-image: url( 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+Cgk8ZGVmcz4KCQk8bGluZWFyR3JhZGllbnQgaWQ9ImltZ3dJY29uR3JhZGllbnQiIGdyYWRpZW50VHJhbnNmb3JtPSJyb3RhdGUoOTApIj4KCQkJPHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iZ29sZCIgLz4KCQkJPHN0b3Agb2Zmc2V0PSI5NSUiIHN0b3AtY29sb3I9InJlZCIgLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJPC9kZWZzPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTAgMGgyNHYyNEgwVjB6Ii8+Cgk8cGF0aCBmaWxsPSJ1cmwoJyNpbWd3SWNvbkdyYWRpZW50JykiIGQ9Ik0xMy44MSAyLjg2Yy4xNy0uMyAwLS43LS4zNS0uNzQtMi42Mi0uMzctNS4zLjI4LTcuNDQgMS44Ni0uMTkuMTUtLjI1LjQzLS4xMi42NWwzLjAxIDUuMjJjLjE5LjMzLjY3LjMzLjg3IDBsNC4wMy02Ljk5em03LjQ5IDUuNDdjLS45OC0yLjQ3LTIuOTItNC40Ni01LjM1LTUuNS0uMjMtLjEtLjUgMC0uNjMuMjJsLTMuMDEgNS4yMWMtLjE5LjMyLjA1Ljc0LjQ0Ljc0aDguMDhjLjM1IDAgLjYtLjM1LjQ3LS42N3ptLjA3IDEuNjdoLTYuMmMtLjM4IDAtLjYzLjQyLS40My43NUwxOSAxOC4xNGMuMTcuMy42LjM1LjgyLjA4IDEuNzQtMi4xOCAyLjQ4LTUuMDMgMi4wNS03Ljc5LS4wMy0uMjUtLjI1LS40My0uNS0uNDN6TTQuMTggNS43OWMtMS43MyAyLjE5LTIuNDggNS4wMi0yLjA1IDcuNzkuMDMuMjQuMjUuNDIuNS40Mmg2LjJjLjM4IDAgLjYzLS40Mi40My0uNzVMNSA1Ljg3Yy0uMTgtLjMtLjYxLS4zNS0uODItLjA4ek0yLjcgMTUuNjdjLjk4IDIuNDcgMi45MiA0LjQ2IDUuMzUgNS41LjIzLjEuNSAwIC42My0uMjJsMy4wMS01LjIxYy4xOS0uMzMtLjA1LS43NS0uNDMtLjc1SDMuMTdjLS4zNS4wMS0uNi4zNi0uNDcuNjh6bTcuODMgNi4yMmMyLjYyLjM3IDUuMy0uMjggNy40NC0xLjg2LjItLjE1LjI2LS40NC4xMy0uNjZsLTMuMDEtNS4yMmMtLjE5LS4zMy0uNjctLjMzLS44NyAwbC00LjA0IDYuOTljLS4xNy4zLjAxLjcuMzUuNzV6Ii8+Cjwvc3ZnPgo=' );
+		display: inline-block;
+		height: 1em;
+		width: 1em;
+	}
+
+	// Import Cropper.js styling.
+	@import 'node_modules/cropperjs/dist/cropper';
+
+	// Override Cropper.js default styling.
+	.cropper-view-box {
+		outline: none;
+	}
+
+	.cropper-face {
+		opacity: 0;
+	}
+}

@@ -1,0 +1,52 @@
+.imgw-btn {
+	// Reset button styling inherited from the theme.
+	&, &:hover {
+		background: none;
+		border: 0 none !important;
+		box-shadow: none !important;
+	}
+
+	border-radius: 3px;
+	font-size: 1em;
+	line-height: 1em;
+	margin: 0;
+	padding: .5em;
+	vertical-align: inherit;
+
+	&__label {
+		display: inline-block;
+		padding: 0 5px;
+	}
+
+	&__icon {
+		float: left;
+
+		&--right {
+			float: right;
+		}
+	}
+
+	&--blue {
+		&, &:hover {
+			background: $blue;
+		}
+	}
+
+	&--green {
+		&, &:hover {
+			background: $green;
+		}
+	}
+
+	&--orange {
+		&, &:hover {
+			background: $orange;
+		}
+	}
+
+	&--red {
+		&, &:hover {
+			background: $red;
+		}
+	}
+}

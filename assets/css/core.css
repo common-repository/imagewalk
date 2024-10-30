@@ -1,0 +1,130 @@
+.imgw {
+  box-sizing: border-box;
+  color: #444;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+
+.imgw * {
+  box-sizing: border-box;
+}
+
+.imgw button, .imgw input, .imgw select, .imgw textarea {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.imgw-color--blue, .imgw-color--info {
+  color: #00A0D2 !important;
+}
+
+.imgw-color--green, .imgw-color--success {
+  color: #46B450 !important;
+}
+
+.imgw-color--orange, .imgw-color--warning {
+  color: #FFB900 !important;
+}
+
+.imgw-color--red, .imgw-color--danger {
+  color: #DC3232 !important;
+}
+
+@font-face {
+  font-family: 'Imagewalk Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/icons.woff2) format("woff2"), url(../fonts/icons.woff) format("woff"), url(../fonts/icons.ttf) format("truetype");
+}
+
+.imgw-icon {
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Imagewalk Icons';
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: inherit;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.imgw-btn {
+  border-radius: 3px;
+  font-size: 1em;
+  line-height: 1em;
+  margin: 0;
+  padding: .5em;
+  vertical-align: inherit;
+}
+
+.imgw-btn, .imgw-btn:hover {
+  background: none;
+  border: 0 none !important;
+  box-shadow: none !important;
+}
+
+.imgw-btn__label {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.imgw-btn__icon {
+  float: left;
+}
+
+.imgw-btn__icon--right {
+  float: right;
+}
+
+.imgw-btn--blue, .imgw-btn--blue:hover {
+  background: #00A0D2;
+}
+
+.imgw-btn--green, .imgw-btn--green:hover {
+  background: #46B450;
+}
+
+.imgw-btn--orange, .imgw-btn--orange:hover {
+  background: #FFB900;
+}
+
+.imgw-btn--red, .imgw-btn--red:hover {
+  background: #DC3232;
+}
+
+.imgw-spinner {
+  display: block;
+  padding: 20px 0;
+}
+
+.imgw-spinner:after {
+  animation: imgw-spinner 1.2s linear infinite;
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2) transparent rgba(0, 0, 0, 0.2) transparent;
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  height: 46px;
+  margin: 0 auto;
+  width: 46px;
+}
+
+@keyframes imgw-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

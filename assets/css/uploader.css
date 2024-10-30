@@ -1,0 +1,438 @@
+/**
+ * Uploader container.
+ */
+.imgw-uploader {
+  background-color: black;
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100000;
+  /*!
+ * Cropper.js v1.5.4
+ * https://fengyuanchen.github.io/cropperjs
+ *
+ * Copyright 2015-present Chen Fengyuan
+ * Released under the MIT license
+ *
+ * Date: 2019-08-03T08:38:38.177Z
+ */
+}
+
+.imgw-uploader__step {
+  margin: 70px auto 0;
+  max-width: 100%;
+  min-width: 250px;
+  width: 500px;
+}
+
+.imgw-uploader__nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 0.65em;
+}
+
+.imgw-uploader__nav__navleft, .imgw-uploader__nav__navright {
+  position: relative;
+}
+
+@media screen and (min-width: 510px) {
+  .imgw-uploader__nav {
+    margin: 0 0 .65em;
+  }
+}
+
+.imgw-uploader__square {
+  height: 0;
+  padding-top: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.imgw-uploader__image {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.imgw-uploader__image img,
+.imgw-uploader__image canvas {
+  width: 100%;
+}
+
+.imgw-uploader__actions {
+  display: flex;
+  justify-content: center;
+  margin: 0.65em 10px 0;
+  text-align: center;
+}
+
+.imgw-uploader__actions .imgw-btn {
+  margin: 0 .65em;
+}
+
+@media screen and (min-width: 510px) {
+  .imgw-uploader__actions {
+    margin: .65em 0 0;
+  }
+}
+
+.imgw-uploader__form {
+  margin: 0.65em 10px 0;
+}
+
+.imgw-uploader__form label {
+  color: white;
+  display: block;
+  font-size: .9em;
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+
+.imgw-uploader__form input {
+  border: 0 none !important;
+  font-size: 1em;
+  line-height: 1em;
+  padding: .8em !important;
+  width: 100%;
+}
+
+@media screen and (min-width: 510px) {
+  .imgw-uploader__form {
+    margin: .65em 0 0;
+  }
+}
+
+.imgw-uploader__file-mask {
+  height: 1px !important;
+  width: 1px !important;
+  opacity: 0 !important;
+  overflow: auto !important;
+}
+
+.imgw-uploader__close {
+  display: block;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.imgw-uploader--icon {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAyNCAyNCI+Cgk8ZGVmcz4KCQk8bGluZWFyR3JhZGllbnQgaWQ9ImltZ3dJY29uR3JhZGllbnQiIGdyYWRpZW50VHJhbnNmb3JtPSJyb3RhdGUoOTApIj4KCQkJPHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iZ29sZCIgLz4KCQkJPHN0b3Agb2Zmc2V0PSI5NSUiIHN0b3AtY29sb3I9InJlZCIgLz4KCQk8L2xpbmVhckdyYWRpZW50PgoJPC9kZWZzPgoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTAgMGgyNHYyNEgwVjB6Ii8+Cgk8cGF0aCBmaWxsPSJ1cmwoJyNpbWd3SWNvbkdyYWRpZW50JykiIGQ9Ik0xMy44MSAyLjg2Yy4xNy0uMyAwLS43LS4zNS0uNzQtMi42Mi0uMzctNS4zLjI4LTcuNDQgMS44Ni0uMTkuMTUtLjI1LjQzLS4xMi42NWwzLjAxIDUuMjJjLjE5LjMzLjY3LjMzLjg3IDBsNC4wMy02Ljk5em03LjQ5IDUuNDdjLS45OC0yLjQ3LTIuOTItNC40Ni01LjM1LTUuNS0uMjMtLjEtLjUgMC0uNjMuMjJsLTMuMDEgNS4yMWMtLjE5LjMyLjA1Ljc0LjQ0Ljc0aDguMDhjLjM1IDAgLjYtLjM1LjQ3LS42N3ptLjA3IDEuNjdoLTYuMmMtLjM4IDAtLjYzLjQyLS40My43NUwxOSAxOC4xNGMuMTcuMy42LjM1LjgyLjA4IDEuNzQtMi4xOCAyLjQ4LTUuMDMgMi4wNS03Ljc5LS4wMy0uMjUtLjI1LS40My0uNS0uNDN6TTQuMTggNS43OWMtMS43MyAyLjE5LTIuNDggNS4wMi0yLjA1IDcuNzkuMDMuMjQuMjUuNDIuNS40Mmg2LjJjLjM4IDAgLjYzLS40Mi40My0uNzVMNSA1Ljg3Yy0uMTgtLjMtLjYxLS4zNS0uODItLjA4ek0yLjcgMTUuNjdjLjk4IDIuNDcgMi45MiA0LjQ2IDUuMzUgNS41LjIzLjEuNSAwIC42My0uMjJsMy4wMS01LjIxYy4xOS0uMzMtLjA1LS43NS0uNDMtLjc1SDMuMTdjLS4zNS4wMS0uNi4zNi0uNDcuNjh6bTcuODMgNi4yMmMyLjYyLjM3IDUuMy0uMjggNy40NC0xLjg2LjItLjE1LjI2LS40NC4xMy0uNjZsLTMuMDEtNS4yMmMtLjE5LS4zMy0uNjctLjMzLS44NyAwbC00LjA0IDYuOTljLS4xNy4zLjAxLjcuMzUuNzV6Ii8+Cjwvc3ZnPgo=");
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+
+.imgw-uploader .cropper-container {
+  direction: ltr;
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.imgw-uploader .cropper-container img {
+  display: block;
+  height: 100%;
+  image-orientation: 0deg;
+  max-height: none !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  min-width: 0 !important;
+  width: 100%;
+}
+
+.imgw-uploader .cropper-wrap-box,
+.imgw-uploader .cropper-canvas,
+.imgw-uploader .cropper-drag-box,
+.imgw-uploader .cropper-crop-box,
+.imgw-uploader .cropper-modal {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.imgw-uploader .cropper-wrap-box,
+.imgw-uploader .cropper-canvas {
+  overflow: hidden;
+}
+
+.imgw-uploader .cropper-drag-box {
+  background-color: #fff;
+  opacity: 0;
+}
+
+.imgw-uploader .cropper-modal {
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.imgw-uploader .cropper-view-box {
+  display: block;
+  height: 100%;
+  outline: 1px solid #39f;
+  outline-color: rgba(51, 153, 255, 0.75);
+  overflow: hidden;
+  width: 100%;
+}
+
+.imgw-uploader .cropper-dashed {
+  border: 0 dashed #eee;
+  display: block;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.imgw-uploader .cropper-dashed.dashed-h {
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  height: calc(100% / 3);
+  left: 0;
+  top: calc(100% / 3);
+  width: 100%;
+}
+
+.imgw-uploader .cropper-dashed.dashed-v {
+  border-left-width: 1px;
+  border-right-width: 1px;
+  height: 100%;
+  left: calc(100% / 3);
+  top: 0;
+  width: calc(100% / 3);
+}
+
+.imgw-uploader .cropper-center {
+  display: block;
+  height: 0;
+  left: 50%;
+  opacity: 0.75;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+.imgw-uploader .cropper-center::before,
+.imgw-uploader .cropper-center::after {
+  background-color: #eee;
+  content: ' ';
+  display: block;
+  position: absolute;
+}
+
+.imgw-uploader .cropper-center::before {
+  height: 1px;
+  left: -3px;
+  top: 0;
+  width: 7px;
+}
+
+.imgw-uploader .cropper-center::after {
+  height: 7px;
+  left: 0;
+  top: -3px;
+  width: 1px;
+}
+
+.imgw-uploader .cropper-face,
+.imgw-uploader .cropper-line,
+.imgw-uploader .cropper-point {
+  display: block;
+  height: 100%;
+  opacity: 0.1;
+  position: absolute;
+  width: 100%;
+}
+
+.imgw-uploader .cropper-face {
+  background-color: #fff;
+  left: 0;
+  top: 0;
+}
+
+.imgw-uploader .cropper-line {
+  background-color: #39f;
+}
+
+.imgw-uploader .cropper-line.line-e {
+  cursor: ew-resize;
+  right: -3px;
+  top: 0;
+  width: 5px;
+}
+
+.imgw-uploader .cropper-line.line-n {
+  cursor: ns-resize;
+  height: 5px;
+  left: 0;
+  top: -3px;
+}
+
+.imgw-uploader .cropper-line.line-w {
+  cursor: ew-resize;
+  left: -3px;
+  top: 0;
+  width: 5px;
+}
+
+.imgw-uploader .cropper-line.line-s {
+  bottom: -3px;
+  cursor: ns-resize;
+  height: 5px;
+  left: 0;
+}
+
+.imgw-uploader .cropper-point {
+  background-color: #39f;
+  height: 5px;
+  opacity: 0.75;
+  width: 5px;
+}
+
+.imgw-uploader .cropper-point.point-e {
+  cursor: ew-resize;
+  margin-top: -3px;
+  right: -3px;
+  top: 50%;
+}
+
+.imgw-uploader .cropper-point.point-n {
+  cursor: ns-resize;
+  left: 50%;
+  margin-left: -3px;
+  top: -3px;
+}
+
+.imgw-uploader .cropper-point.point-w {
+  cursor: ew-resize;
+  left: -3px;
+  margin-top: -3px;
+  top: 50%;
+}
+
+.imgw-uploader .cropper-point.point-s {
+  bottom: -3px;
+  cursor: s-resize;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.imgw-uploader .cropper-point.point-ne {
+  cursor: nesw-resize;
+  right: -3px;
+  top: -3px;
+}
+
+.imgw-uploader .cropper-point.point-nw {
+  cursor: nwse-resize;
+  left: -3px;
+  top: -3px;
+}
+
+.imgw-uploader .cropper-point.point-sw {
+  bottom: -3px;
+  cursor: nesw-resize;
+  left: -3px;
+}
+
+.imgw-uploader .cropper-point.point-se {
+  bottom: -3px;
+  cursor: nwse-resize;
+  height: 20px;
+  opacity: 1;
+  right: -3px;
+  width: 20px;
+}
+
+@media (min-width: 768px) {
+  .imgw-uploader .cropper-point.point-se {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .imgw-uploader .cropper-point.point-se {
+    height: 10px;
+    width: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .imgw-uploader .cropper-point.point-se {
+    height: 5px;
+    opacity: 0.75;
+    width: 5px;
+  }
+}
+
+.imgw-uploader .cropper-point.point-se::before {
+  background-color: #39f;
+  bottom: -50%;
+  content: ' ';
+  display: block;
+  height: 200%;
+  opacity: 0;
+  position: absolute;
+  right: -50%;
+  width: 200%;
+}
+
+.imgw-uploader .cropper-invisible {
+  opacity: 0;
+}
+
+.imgw-uploader .cropper-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+
+.imgw-uploader .cropper-hide {
+  display: block;
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+.imgw-uploader .cropper-hidden {
+  display: none !important;
+}
+
+.imgw-uploader .cropper-move {
+  cursor: move;
+}
+
+.imgw-uploader .cropper-crop {
+  cursor: crosshair;
+}
+
+.imgw-uploader .cropper-disabled .cropper-drag-box,
+.imgw-uploader .cropper-disabled .cropper-face,
+.imgw-uploader .cropper-disabled .cropper-line,
+.imgw-uploader .cropper-disabled .cropper-point {
+  cursor: not-allowed;
+}
+
+.imgw-uploader .cropper-view-box {
+  outline: none;
+}
+
+.imgw-uploader .cropper-face {
+  opacity: 0;
+}

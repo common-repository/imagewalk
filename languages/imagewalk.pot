@@ -1,0 +1,274 @@
+# Copyright (C) 2019 Imagewalk
+# This file is distributed under the same license as the Imagewalk package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Imagewalk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: classes/Admin.php:33, classes/Admin.php:34, classes/Admin.php:76
+msgid "Settings"
+msgstr ""
+
+#: classes/Admin.php:96
+msgid "(no caption)"
+msgstr ""
+
+#: classes/Imagewalk.php:143
+msgid "Imagewalk Posts"
+msgstr ""
+
+#: classes/Imagewalk.php:144
+msgid "All Posts"
+msgstr ""
+
+#: classes/Admin/Notices.php:29
+msgid "<strong>Imagewalk</strong> is successfully installed. Click <a href=\"%s\" target=\"_blank\">here</a> to create your first post!"
+msgstr ""
+
+#: classes/Admin/Notices.php:57
+msgid "<strong>Imagewalk</strong>: WordPress user registration on is currently disabled. Go to the <a href=\"%s\">settings page</a> to enable it so that anyone can join the community."
+msgstr ""
+
+#: classes/Endpoint/Comment.php:29
+msgid "Are you sure want to delete this comment?"
+msgstr ""
+
+#: classes/Endpoint/Post.php:26
+msgid "Are you sure want to delete this post?"
+msgstr ""
+
+#: classes/Endpoint/Post.php:64, classes/Model/Post.php:42, classes/Model/Post.php:114, templates/pages/post.php:11
+msgid "Post not found."
+msgstr ""
+
+#: classes/Model/Comment.php:42, classes/Model/Comment.php:104, classes/Model/Comment.php:132
+msgid "Comment not found."
+msgstr ""
+
+#: classes/Model/Comment.php:74
+msgid "User cannot add comment."
+msgstr ""
+
+#: classes/Model/Comment.php:108
+msgid "User cannot edit comment."
+msgstr ""
+
+#: classes/Model/Comment.php:117
+msgid "Edit comment failed."
+msgstr ""
+
+#: classes/Model/Comment.php:136
+msgid "User cannot delete comment."
+msgstr ""
+
+#: classes/Model/Comment.php:141
+msgid "Delete comment failed."
+msgstr ""
+
+#: classes/Model/Image.php:13
+msgid "Invalid image data."
+msgstr ""
+
+#: classes/Model/Image.php:19
+msgid "Invalid image type."
+msgstr ""
+
+#: classes/Model/Image.php:33
+msgid "Cannot create upload directory."
+msgstr ""
+
+#: classes/Model/Image.php:44
+msgid "Cannot save uploaded file."
+msgstr ""
+
+#: classes/Model/Image.php:51
+msgid "File is not valid."
+msgstr ""
+
+#: classes/Model/Post.php:82
+msgid "User cannot add post."
+msgstr ""
+
+#: classes/Model/Post.php:118
+msgid "User cannot delete post."
+msgstr ""
+
+#: classes/Model/Post.php:123
+msgid "Delete post failed."
+msgstr ""
+
+#: classes/Page/Home.php:32
+msgid "Photos"
+msgstr ""
+
+#: classes/Page/Post.php:37, templates/components/uploader.php:42
+msgid "Post"
+msgstr ""
+
+#: classes/Page/Post.php:82
+msgid "Post by %s &mdash; %s"
+msgstr ""
+
+#: classes/Page/Post.php:114
+msgid "Post by %s"
+msgstr ""
+
+#: classes/Page/User.php:37
+msgid "User"
+msgstr ""
+
+#: classes/Widget/Menubar.php:6
+msgid "Imagewalk Menubar"
+msgstr ""
+
+#: classes/Widget/Menubar.php:7
+msgid "Display an Imagewalk menubar."
+msgstr ""
+
+#: classes/Widget/Menubar.php:28
+msgid "Show upload button"
+msgstr ""
+
+#: classes/Admin/Settings/General.php:7
+msgid "General"
+msgstr ""
+
+#: classes/Admin/Settings/General.php:15
+msgid "Membership"
+msgstr ""
+
+#: classes/Admin/Settings/General.php:16
+msgid "<strong>Notice:</strong> This setting changes the WordPress user registration setting, which can be found <a href=\"options-general.php#users_can_register\">here</a>."
+msgstr ""
+
+#: classes/Admin/Settings/General.php:19
+msgid "Enable WordPress user registration."
+msgstr ""
+
+#: classes/Admin/Settings/General.php:22
+msgid "Posts"
+msgstr ""
+
+#: classes/Admin/Settings/General.php:26
+msgid "Initial posts loaded"
+msgstr ""
+
+#: classes/Admin/Settings/General.php:27
+msgid "The number of initial posts to be loaded on the stream."
+msgstr ""
+
+#: classes/Admin/Settings/General.php:35
+msgid "Comments"
+msgstr ""
+
+#: classes/Admin/Settings/General.php:39
+msgid "Initial comments loaded"
+msgstr ""
+
+#: classes/Admin/Settings/General.php:40
+msgid "The number of initial comments to be loaded on each post."
+msgstr ""
+
+#: classes/Admin/Settings/General.php:47
+msgid "More comments loaded"
+msgstr ""
+
+#: classes/Admin/Settings/General.php:48
+msgid "The number of more comments to be loaded every time the \"show more comments\" button is clicked."
+msgstr ""
+
+#: classes/Admin/Settings/Navigation.php:7
+msgid "Navigation"
+msgstr ""
+
+#: classes/Admin/Settings/Navigation.php:26
+msgid "Stream page"
+msgstr ""
+
+#: classes/Admin/Settings/Navigation.php:34
+msgid "Single post page"
+msgstr ""
+
+#: classes/Admin/Settings/Navigation.php:42
+msgid "User profile page"
+msgstr ""
+
+#: imagewalk.php:3, imagewalk.php:6
+msgid "Imagewalk"
+msgstr ""
+
+#: imagewalk.php:4
+msgid "Instant image sharing plugin for WordPress. Imagewalk adds an image sharing feature to your site, which lets users share images or photos directly from their browser."
+msgstr ""
+
+#: imagewalk.php:7
+msgid "https://imagewalk.io/"
+msgstr ""
+
+#: templates/components/comment.php:22, templates/components/comment.php:52
+msgid "Delete comment"
+msgstr ""
+
+#: templates/components/commentbox.php:2
+msgid "add new comment..."
+msgstr ""
+
+#: templates/components/comments.php:8, templates/components/comments.php:26
+msgid "show more comments"
+msgstr ""
+
+#: templates/components/post.php:22, templates/components/post.php:72
+msgid "Delete post"
+msgstr ""
+
+#: templates/components/uploader.php:12
+msgid "Next"
+msgstr ""
+
+#: templates/components/uploader.php:22
+msgid "Flip"
+msgstr ""
+
+#: templates/components/uploader.php:26
+msgid "Rotate"
+msgstr ""
+
+#: templates/components/uploader.php:36
+msgid "Back"
+msgstr ""
+
+#: templates/components/uploader.php:50
+msgid "Caption"
+msgstr ""
+
+#: templates/components/uploader.php:52
+msgid "Enter image caption here..."
+msgstr ""
+
+#: templates/pages/user.php:42
+msgid "User not found."
+msgstr ""
+
+#: templates/shortcodes/menubar.php:15
+msgid "Home"
+msgstr ""
+
+#: templates/shortcodes/menubar.php:21
+msgid "Upload"
+msgstr ""
+
+#: templates/admin/settings/content.php:96
+msgid "Save Changes"
+msgstr ""
+
+#: templates/admin/settings/header.php:17
+msgid "Imagewalk Settings"
+msgstr ""

@@ -1,0 +1,21 @@
+.imgw-color {
+	&--blue,
+	&--info {
+		color: $blue !important;
+	}
+
+	&--green,
+	&--success {
+		color: $green !important;
+	}
+
+	&--orange,
+	&--warning {
+		color: $orange !important;
+	}
+
+	&--red,
+	&--danger {
+		color: $red !important;
+	}
+}
